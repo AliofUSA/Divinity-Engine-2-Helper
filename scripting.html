@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <!-- Set viewport  -->
+
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Divinity Engine 2 Helper | Scripting</title>
+
+    <!-- Main style sheet  -->
+
+    <link href="css/wide.css" rel="stylesheet" type="text/css">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script src="https://use.fontawesome.com/4b5989214f.js"></script>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <div id="left-and-right">
+            <aside id="sidebar">
+
+                <h1>Tips List</h1>
+
+                <h3>Mapping</h3>
+                <ul>
+                    <li><a href="tips.html#tip-mapping1">Edit only selected terrain</a></li>
+                    <li><a href="tips.html#tip-mapping2">Object/selection proportional scaling</a></li>
+                    <li><a href="tips.html#tip-mapping3">Selecting weird wall segments</a></li>
+                    <li><a href="tips.html#tip-mapping4">Creating rooftops easily</a></li>
+                    <li><a href="tips.html#tip-mapping5">Randomizing instance painter settings</a></li>
+                </ul>
+
+                <h3>Scripting</h3>
+                <ul>
+                    <li><a href="tips.html#tip-scripting1">S_ Prefix for objects referred to in scripts</a></li>
+                    <li><a href="tips.html#tip-scripting2">Search and autocomplete statements</a></li>
+                    <li><a href="tips.html#tip-scripting3">Refresh new object names/IDs in story editor</a></li>
+                    <li><a href="tips.html#tip-scripting4">Quickly test scripting with character</a></li>
+                    <li><a href="tips.html#tip-scripting5">Search for content across all script goals</a></li>
+                </ul>
+
+                <h3>Stats</h3>
+                <ul>
+                    <li><a href="tips.html#tip-stats1">Search for content in stats lists</a></li>
+                    <li><a href="tips.html#tip-stats2">Filter content in stats lists</a></li>
+                    <li><a href="tips.html#tip-stats3">Parenting: Re-using stat values for new entries</a></li>
+                </ul>
+
+            </aside>
+
+            <div id="right">
+                <header><a href="index.html"><img id="headertitle" src="images/headertitle.png" alt="Divinity Engine 2 Helper"></a></header>
+
+                <nav>
+
+                    <ul>
+                        <li><a href="mapping.html"><img src="images/logos/logo_mapping.png" alt="Mapping logo with mountain icon"><p>Mapping</p></a></li>
+                        <li><a href="scripting.html" class="navCurrentPage"><img src="images/logos/logo_scripting.png" alt="Scripting logo with arrow and line"><p>Scripting</p></a></li>
+                        <li><a href="stats.html"><img src="images/logos/logo_stats.png" alt="Stats logo with graph icon"><p>Stats</p></a></li>
+                        <li><a href="tips.html"><img src="images/logos/logo_tips.png" alt="Tips logo with lightbulb icon"><p>Tips</p></a></li>
+                        <li><a href="resources.html"><img src="images/logos/logo_resources.png" alt="Resources logo with document icon"><p>Resources</p></a></li>
+                    </ul>
+
+                </nav>
+
+                <div id="content">
+                    <main>
+                        <!--<div id="tableOfContents">
+                            <h4>Contents</h4>
+                            <ol id="tocList">
+                                <li><a href="#">Mapping Process</a></li>
+                                <ol>
+                                    <li><a href="#">Create Terrain</a></li>
+                                </ol>
+                                <li><a href="#">How Should I Go About Mapping?</a></li>
+                            </ol>
+                        </div> -->
+
+                        <h2>Scripting Overview</h2>
+                        <p>Scripting in The Divinity Engine 2 uses a language called Osiris. There are two main types of scripting (others not important to discuss here), one being item/character scripting and the other story scripting.</p>
+                        
+                        <img src="images/scripting_overview.png" alt="Screenshot of script and story editors">
+                        
+                        <p>Item/character scripting is for when you want to apply custom behavior to specific items or characters you place in the game. The way it works is you make a script, then click on an object (character or item) and then add the script to that object and it will affect just that object. This is nice when you want to customize some general characters or items, like a script for particular types of boxes that create surfaces when attacked. You can place down some boxes in a level, click on them and add the script you wrote that makes them behave this way.</p>
+                        <p>Story scripting on the other hand is useful for whole adventures as you use it to script more specific things. For example, let’s say you want to make a particular area where when the player enters they are ambushed by a pack of wolves. You wouldn’t be able to do this with a character/item script because this is a specific event you can't simply attach to a single object or something like that.</p>
+                        <p>I will mainly focus on talking about story scripting because I admittedly don’t have enough knowledge and experience related to item/character scripting. If you want to know more about that, Larian Studios’ official wiki page is a great resource: <a href="https://docs.larian.game/Scripting">https://docs.larian.game/Scripting</a></p>
+
+                        <h3>Osiris Story Scripting:</h3>
+                        <p>Osiris uses simply formatted code blocks that consist of an <strong>IF</strong> section for checking for an <strong>event</strong>, then an optional <strong>AND</strong> section for additional conditions or <strong>queries</strong>, and a final <strong>THEN</strong> section which has <strong>calls</strong> that tell the engine what to do. A simple explanation of what each code block does goes like this: “<strong>IF</strong> something occurs, <strong>AND</strong> these other conditions are met, <strong>THEN</strong> do something.”</p>
+                        
+                        <p>Let's look at our earlier example and structure it in a code block; a pack of wolves ambush the player when the player enters an area:</p>
+                        
+                        <p class="codeblock">IF<br>
+                        CharacterEnteredTrigger(_Character, [NameOfTriggerArea_IDString])<br>
+                        AND<br>
+                        CharacterIsPlayer(_Character, 1)<br>
+                        THEN<br>
+                        SetOnStage(Wolf1, 1);<br>
+                        SetOnStage(Wolf2, 1);<br>
+                        SetOnStage(Wolf3, 1);<br></p>
+                        
+                        <p>What we have here is a code block that tells the engine to check when a character enters a specific trigger area and check if that character is a player, and if they are, then set 3 different wolf enemies on stage (which is like making them spawn).</p>
+                        
+                        <h2>How Should I Go About Scripting?</h2>
+                        <p>After some planning about what will happen in your story and after creating essential areas for your map, you can probably start scripting some things.</p>
+                        
+                        <p>The reason I say this is you'll probably have a hard time story scripting if you don't have a physical space for the scripting to act out. This makes it a lot easier for me when I script, although you might have a different perspective.</p>
+                        
+                        <p>What I mean by creating essential map areas is basic features of an area that are important for your scripted encounter. For example, if wolves are going to jump out of bushes while the player is proceeding down a path, you might want to have the path mapped out along with the bushes placed down where the wolves jump out from.</p>
+                        
+                    </main>
+
+                </div>
+            </div>
+        </div>
+
+        <footer>
+        <aside><div><a href="https://steamcommunity.com/app/435150"><i class="fa fa-steam-square" aria-hidden="true"></i></a></div></aside><main>Copyright © 2021, Ali Zineddin</main>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

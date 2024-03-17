@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <!-- Set viewport  -->
+
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Divinity Engine 2 Helper | Tips</title>
+
+    <!-- Main style sheet  -->
+
+    <link href="css/wide.css" rel="stylesheet" type="text/css">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script src="https://use.fontawesome.com/4b5989214f.js"></script>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <div id="left-and-right">
+            <aside id="sidebar">
+
+                <h1>Tips List</h1>
+
+                <h3>Mapping</h3>
+                <ul>
+                    <li><a href="#tip-mapping1">Edit only selected terrain</a></li>
+                    <li><a href="#tip-mapping2">Object/selection proportional scaling</a></li>
+                    <li><a href="#tip-mapping3">Selecting weird wall segments</a></li>
+                    <li><a href="#tip-mapping4">Creating rooftops easily</a></li>
+                    <li><a href="#tip-mapping5">Randomizing instance painter settings</a></li>
+                </ul>
+
+                <h3>Scripting</h3>
+                <ul>
+                    <li><a href="#tip-scripting1">S_ Prefix for objects referred to in scripts</a></li>
+                    <li><a href="#tip-scripting2">Search and autocomplete statements</a></li>
+                    <li><a href="#tip-scripting3">Refresh new object names/IDs in story editor</a></li>
+                    <li><a href="#tip-scripting4">Quickly test scripting with character</a></li>
+                    <li><a href="#tip-scripting5">Search for content across all script goals</a></li>
+                </ul>
+
+                <h3>Stats</h3>
+                <ul>
+                    <li><a href="#tip-stats1">Search for content in stats lists</a></li>
+                    <li><a href="#tip-stats2">Filter content in stats lists</a></li>
+                    <li><a href="#tip-stats3">Parenting: Re-using stat values for new entries</a></li>
+                </ul>
+
+            </aside>
+
+            <div id="right">
+                <header><a href="index.html"><img id="headertitle" src="images/headertitle.png" alt="Divinity Engine 2 Helper"></a></header>
+
+                <nav>
+
+                    <ul>
+                        <li><a href="mapping.html"><img src="images/logos/logo_mapping.png" alt="Mapping logo with mountain icon"><p>Mapping</p></a></li>
+                        <li><a href="scripting.html"><img src="images/logos/logo_scripting.png" alt="Scripting logo with arrow and line"><p>Scripting</p></a></li>
+                        <li><a href="stats.html"><img src="images/logos/logo_stats.png" alt="Stats logo with graph icon"><p>Stats</p></a></li>
+                        <li><a href="tips.html" class="navCurrentPage"><img src="images/logos/logo_tips.png" alt="Tips logo with lightbulb icon"><p>Tips</p></a></li>
+                        <li><a href="resources.html"><img src="images/logos/logo_resources.png" alt="Resources logo with document icon"><p>Resources</p></a></li>
+                    </ul>
+
+                </nav>
+
+                <div id="content">
+                    <main>
+                        <!--<div id="tableOfContents">
+                            <h4>Contents</h4>
+                            <ol id="tocList">
+                                <li><a href="#">Mapping Process</a></li>
+                                <ol>
+                                    <li><a href="#">Create Terrain</a></li>
+                                </ol>
+                                <li><a href="#">How Should I Go About Mapping?</a></li>
+                            </ol>
+                        </div> -->
+
+                        <h1>Tips</h1>
+                        
+                        <p class="center">Every tip in the Tips List sidebar also links to the appropriate tip on this page.</p>
+                        <p class="center">Try using <strong>Ctrl+F</strong> (windows), <strong>Cmd+F</strong> (mac) or the <strong>Find</strong> function on mobile browsers to search for keywords related to something you're looking for.</p>
+                        <br>
+                        
+                        <h2>Mapping</h2>
+                        
+                        <h3 id="tip-mapping1">Edit only selected terrain</h3>
+                        <video autoplay loop muted src="images/webm/tip_mapping_terrain-edit-single.webm" alt="Screencap video of modifying only selected terrain with brush in engine"></video>
+                        <p>Sometimes you may try to edit terrain without affecting other individual terrain pieces around it. You can toggle the option to only paint the selected terrain, instead of any terrain the brush is on.</p>
+                        
+                        <h3 id="tip-mapping2">Object/selection proportional scaling</h3>
+                        <video autoplay loop muted src="images/webm/tip_mapping_object-selection.webm" alt="Screencap video of scaling by object or selection in engine"></video>
+                        <p>You can switch between Selection Center and Object Center when scaling multiple objects at once. Selection Scaling retains the relative distance between each selected object, and Object Scaling keeps each object in place.</p>
+                        
+                        <h3 id="tip-mapping3">Selecting weird wall segments</h3>
+                        <video autoplay loop muted src="images/webm/tip_mapping_wall-physics.webm" alt="Screencap video of enabling physics visuals in engine"></video>
+                        <p>Sometimes when you want to click on a wall segment, you will click on an object behind it or a different part of the wall. This is because the <strong>physics model</strong> of the wall segment is <strong>different from the visual model</strong>, and the <strong>physics model is what you have to click on</strong>. You can select a wall, select the dropdown menu with the “Eye” icon, and choose physics to toggle seeing physics models.</p>
+                        
+                        <h3 id="tip-mapping4">Creating rooftops easily</h3>
+                        <video autoplay loop muted src="images/webm/tip_mapping_roof-making.webm" alt="Screencap video of efficiently making a roof"></video>
+                        <p>Making a roof from scratch can be a pain, but a quick way is to duplicate a wall with Shift+Mouse Drag upwards, then change its root ID to the matching roof. This way you don't have to shape walls twice and try to line them up correctly, as they are already shaped and lined up correctly.</p>
+                        
+                        <h3 id="tip-mapping5">Randomizing instance painter settings</h3>
+                        <video autoplay loop muted src="images/webm/tip_mapping_instance-painter-settings.webm" alt="Screencap video of painting variable grass instances"></video>
+                        <p>Changing the settings around in the Instance Painter to give you more variation can help create more interesting detail to your maps. You can change how fast it creates instances (<strong>flow</strong>), random <strong>rotation</strong>, and <strong>minimum and maximum sizes</strong> of created instances. <strong>AlignNormal</strong> is also a setting which can make instances <strong>align with the terrain</strong>.</p>
+                        <br>
+                        <br>
+                        
+                        <h2>Scripting</h2>
+                        
+                        <h3 id="tip-scripting1">S_ Prefix for objects referred to in scripts</h3>
+                        <video autoplay loop muted src="images/webm/tip_scripting_naming-prefix.webm" alt="Screencap video of adding S_ prefix to object and attempting to delete object"></video>
+                        <p>You can add the prefix <strong>S_</strong> to the name of an object to make the engine treat it as an object important to scripting. This will make a warning prompt appear <strong>when you try to delete the object</strong>, saying it could break scripting if it is deleted. You should do this for <strong>any character, item, etc. that is or will be used in a script.</strong></p>
+                        
+                        <h3 id="tip-scripting2">Search and autocomplete statements</h3>
+                        <video autoplay loop muted src="images/webm/tip_scripting_autocomplete-guide.webm" alt="Screencap video of autocompleting statement in story editor"></video>
+                        <p>After typing any word in the story editor, it will try to display every call, query, and event name that has that word in it. If you use the <strong>up and down arrow keys</strong> you can navigate to each statement, and it will show what fields are required for the highlighted statement. It also <strong>color codes events</strong> as <em>Purple</em>, <strong>queries</strong> as <em>Red</em>, and <strong>calls</strong> as <em>Green</em>. You can use this to search for statements and see how to utilize each one quickly.</p>
+                        
+                        <h3 id="tip-scripting3">Refresh new object names/IDs in story editor</h3>
+                        <video autoplay loop muted src="images/webm/tip_scripting_generate-definitions.webm" alt="Screencap video of using Generate Definitions to refresh object names"></video>
+                        <p>If you just created new names for objects, they might not show up in the story editor to autocomplete if you type them out. This is because the engine hasn't refreshed its database of object names and IDs, so in order to do that, go to <strong>File > Generate Definitions</strong> in the story editor.</p>
+                        
+                        <h3 id="tip-scripting4">Quickly test scripting with character</h3>
+                        <video autoplay loop muted src="images/webm/tip_scripting_script-testing.webm" alt="Screencap video of making a character into a player for testing"></video>
+                        <p>You'll want to test your scripts out when you type them out, but this can be a pain especially if your scripting involves much later parts of a level. One way to do this is create a character and <strong>place them near where you will test your scripting</strong>, and then add them to the <strong>DB_IsPlayer</strong> database and <strong>make them a player character</strong> in a story script.</p>
+                        <p>After compiling the script and reloading the level, your character will spawn at the level start, so just click them, press <strong>J</strong> to jump to their original spot, and move them back into place, then go to Game view and control them to test your level out.</p>
+                        
+                        <h3 id="tip-scripting5">Search for content across all script goals</h3>
+                        <video autoplay loop muted src="images/webm/tip_scripting_search-all-scripts.webm" alt="Screencap video of searching for a keyword in all story script goals"></video>
+                        <p>You can use the <strong>Find Replace</strong> function found under the <strong>Edit</strong> tab in the story editor to search for content across <strong>every script goal found and inherited in your project.</strong> This is incredibly useful for times when you need to find where an object is being referenced in a script, or when searching through the Divinity Origins campaign to find where and how Larian Studios scripted certain events in Divinity: Original Sin II.</p>
+                        <br>
+                        <br>
+                        
+                        <h2>Stats</h2>
+                        
+                        <h3 id="tip-stats1">Search for content in stats lists</h3>
+                        <video autoplay loop muted src="images/webm/tip_stats_find-content.webm" alt="Screencap video of searching in stats editor"></video>
+                        <p>You can easily search for key words in stats lists with <strong>Ctrl+F</strong>. There are arrow buttons to navigate to the next instance of the searched word and previous instance, a button to change sensitive case and search for entire words, and a Find All button that lists every instance in the Find window.</p>
+                        
+                        <h3 id="tip-stats2">Filter content in stats lists</h3>
+                        <video autoplay loop muted src="images/webm/tip_stats_filter.webm" alt="Screencap video of filtering out words in stats editor"></video>
+                        <p>You can add filters to exclude or include any content you don't or do want to see in a stats list. You can specify which <strong>column</strong> to target in a filter as well as what <strong>conditions</strong> it should satisfy, such as "Contains" or "Is greater than". For example, you can show only skills that have a cooldown of one turn, with <strong>Cooldown > Equals > 1</strong>.</p>
+                        
+                        <h3 id="tip-stats3">Parenting: Re-using stat values for new entries</h3>
+                        <video autoplay loop muted src="images/webm/tip_stats_parenting.webm" alt="Screencap video of typing entry name into Parent field"></video>
+                        <p>Make ample use of the <strong>Parent</strong> column in stats lists to give an entry the same stats as the entry you enter into the column, and then just modify what you want. This will save you a lot of time and is extremely helpful for making pretty much anything in the stats editor. For example, if I wanted to make a new jump skill, I would probably use Phoenix Dive as a parent and then make changes specific to my new skill.</p>
+
+                    </main>
+
+                </div>
+            </div>
+        </div>
+
+        <footer>
+        <aside><div><a href="https://steamcommunity.com/app/435150"><i class="fa fa-steam-square" aria-hidden="true"></i></a></div></aside><main>Copyright © 2021, Ali Zineddin</main>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

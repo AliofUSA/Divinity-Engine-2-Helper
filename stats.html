@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <!-- Set viewport  -->
+
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Divinity Engine 2 Helper | Stats</title>
+
+    <!-- Main style sheet  -->
+
+    <link href="css/wide.css" rel="stylesheet" type="text/css">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script src="https://use.fontawesome.com/4b5989214f.js"></script>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <div id="left-and-right">
+            <aside id="sidebar">
+
+                <h1>Tips List</h1>
+
+                <h3>Mapping</h3>
+                <ul>
+                    <li><a href="tips.html#tip-mapping1">Edit only selected terrain</a></li>
+                    <li><a href="tips.html#tip-mapping2">Object/selection proportional scaling</a></li>
+                    <li><a href="tips.html#tip-mapping3">Selecting weird wall segments</a></li>
+                    <li><a href="tips.html#tip-mapping4">Creating rooftops easily</a></li>
+                    <li><a href="tips.html#tip-mapping5">Randomizing instance painter settings</a></li>
+                </ul>
+
+                <h3>Scripting</h3>
+                <ul>
+                    <li><a href="tips.html#tip-scripting1">S_ Prefix for objects referred to in scripts</a></li>
+                    <li><a href="tips.html#tip-scripting2">Search and autocomplete statements</a></li>
+                    <li><a href="tips.html#tip-scripting3">Refresh new object names/IDs in story editor</a></li>
+                    <li><a href="tips.html#tip-scripting4">Quickly test scripting with character</a></li>
+                    <li><a href="tips.html#tip-scripting5">Search for content across all script goals</a></li>
+                </ul>
+
+                <h3>Stats</h3>
+                <ul>
+                    <li><a href="tips.html#tip-stats1">Search for content in stats lists</a></li>
+                    <li><a href="tips.html#tip-stats2">Filter content in stats lists</a></li>
+                    <li><a href="tips.html#tip-stats3">Parenting: Re-using stat values for new entries</a></li>
+                </ul>
+
+            </aside>
+
+            <div id="right">
+                <header><a href="index.html"><img id="headertitle" src="images/headertitle.png" alt="Divinity Engine 2 Helper"></a></header>
+
+                <nav>
+
+                    <ul>
+                        <li><a href="mapping.html"><img src="images/logos/logo_mapping.png" alt="Mapping logo with mountain icon"><p>Mapping</p></a></li>
+                        <li><a href="scripting.html"><img src="images/logos/logo_scripting.png" alt="Scripting logo with arrow and line"><p>Scripting</p></a></li>
+                        <li><a href="stats.html" class="navCurrentPage"><img src="images/logos/logo_stats.png" alt="Stats logo with graph icon"><p>Stats</p></a></li>
+                        <li><a href="tips.html"><img src="images/logos/logo_tips.png" alt="Tips logo with lightbulb icon"><p>Tips</p></a></li>
+                        <li><a href="resources.html"><img src="images/logos/logo_resources.png" alt="Resources logo with document icon"><p>Resources</p></a></li>
+                    </ul>
+
+                </nav>
+
+                <div id="content">
+                    <main>
+                        <!--<div id="tableOfContents">
+                            <h4>Contents</h4>
+                            <ol id="tocList">
+                                <li><a href="#">Mapping Process</a></li>
+                                <ol>
+                                    <li><a href="#">Create Terrain</a></li>
+                                </ol>
+                                <li><a href="#">How Should I Go About Mapping?</a></li>
+                            </ol>
+                        </div> -->
+
+                        <h2>Stats Overview</h2>
+                        <p>The Divinity Engine 2 has an editor called the Stats editor which you use to edit values for things like Skills, Statuses (or technically Potion Effects), Weapon and Armor stats and Equipment sets.</p>
+                        
+                        <p>Potential things you can do are making entirely new skills or editing existing ones, making entirely new status effects or editing existing ones, making stats for particular kinds of weapons or specific weapons or armor pieces or editing existing ones.</p>
+                        
+                        <p>Keep in mind this is for <em>statistics</em> on these types of things, such as damage values or cooldown timers, this is not the editor for custom visual effects or models (those are beyond my scope of knowledge… but if you want to know, they are the Material Editor and AllSpark Editor).</p>
+                        
+                        <p>The way the editor works is you enter a name for a specific source that will contain statistics, for example the name of a skill, and you fill information into fields given to you by the editor depending on what it is you are making.</p>
+                        
+                        <img src="images/stats_skills.png" alt="Screenshot of skill page in Stats editor">
+                        
+                        <h3>Skills</h3>
+                        <p>Skills are made completely new in the Stats editor under stat pages for specific types of skills, such as a page for Shout Skills or Jump Skills.</p>
+                        
+                        <p>Here you determine exact characteristics of your skill, such as what skill school it falls under (Pyromancy, Geomancy, etc.), how many Action Points it costs to use, and its cooldown length. You can also change things like what effects will play with your skill and what animations the character will do that uses it.</p>
+                        
+                        <h3>Statuses</h3>
+                        <p>Statuses are made under specific pages depending on the status, similar to how skills work, but here its only determined that it is a status effect and how it will look and display like on a character or item.</p>
+                        
+                        <p>The actual stats that are applied to a character when they have a certain Status Effect are determined in the Potions page under Stats, and Status Effects will take an entry from the Potions page and use it to apply to characters.</p>
+                        
+                        <p>Confusing? Let me give an example:</p>
+                        
+                        <p class="codeblock">Under StatusData, there is page called Status_INCAPACITATED, where a status effect called FROZEN is entered in the first field. Here, FROZEN's <strong>DisplayName</strong>, <strong>Description</strong>, and other visual details are determined, as well as what its <strong>Saving Throw</strong> is and <strong>how long the status effect lasts</strong> on apply.</p>
+                        
+                        <p class="codeblock">We will then go to the dropdown for Stats and go to the Potion page, where we see an entry named Stats_Frozen. This holds all of the specific statistics that will be applied to a character when they receive the FROZEN status effect, such as fire resistance -20 and -100 dodge chance.</p>
+                        
+                        <p>In order to identify the Stats_Frozen stats as the stats to be applied to a character when they receive the FROZEN status, in the column called <strong>StatsId</strong> for the FROZEN status, the name of the Potion stat is given, which is Stats_Frozen.</p>
+                        
+                        <h3>Weapons and Armor</h3>
+                        
+                        <p>Weapon and Armor stats are stat entries that specify statistics about weapons or armor and are applied to a weapon or armor template.</p>
+                        
+                        <p>Here we determine things like durability, damage, damage type and equip requirements. Pretty straight-forward stuff.</p>
+                        
+                        <h3>Equipment</h3>
+                        
+                        <p>Equipment Sets are found under Equipment -> Equipment (lol) and are just that, sets of equipment. You use these to give sets of equipment to characters or other things without having to script giving them every single specific item you need. An example is the starting supplies given to every player character when they start a campaign for the first time, as well as the clothes and weapons they start equipped with.</p>
+                        
+                        <p>All you do is type in the name of every piece of equipment that will be included in the equipment set in its own field in that equipment set's row.</p>
+                        
+                    </main>
+
+                </div>
+            </div>
+        </div>
+
+        <footer>
+        <aside><div><a href="https://steamcommunity.com/app/435150"><i class="fa fa-steam-square" aria-hidden="true"></i></a></div></aside><main>Copyright © 2021, Ali Zineddin</main>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
